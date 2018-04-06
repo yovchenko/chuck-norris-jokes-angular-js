@@ -23,8 +23,8 @@ angular.module(MODULE_NAME, [])
 		};
 	})
 	.controller('AppCtrl', function ($scope, $http, getData) {
-		getData.req($http, 'http://api.icndb.com/jokes/random?escape=javascript').then(function (data) {
-			$scope.joke = data.value.joke;
+		getData.req($http, 'http://api.icndb.com/jokes/random/1?escape=javascript').then(function (data) {
+			$scope.joke = data.value[0].joke;
 		}, function () {
 			$scope.joke = 'Oops,something went wrong!';
 		});
@@ -33,11 +33,21 @@ angular.module(MODULE_NAME, [])
 		}, function () {
 			$scope.categories = 'Oops,something went wrong!';
 		});
-		$scope.selectCategory = function(el) {
-		// buttons	console.log(el.item);
+		$scope.selectCategory = function (el) {
+			// buttons	console.log(el.item);
 		};
-		$scope.change = function() {
-			// input    console.log($scope.jokesNumber)
+		$scope.change = function () {
+			let input = Number($scope.jokesNumber);
+			if (input > 0 && input <= 10) {
+				$scope.joke = '';
+				getData.req($http, 'http://api.icndb.com/jokes/random/' + input + '?escape=javascript').then(function (data) {
+					data.value.forEach(element => {
+						$scope.joke += element.joke;
+					});
+				}, function () {
+					$scope.joke = 'Oops,something went wrong!';
+				});
+			} else $scope.joke = 'Sorry,but Chuck knows numbers 1 to 10 only';
 		};
 	});
 export default MODULE_NAME;
