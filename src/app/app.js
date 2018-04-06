@@ -32,5 +32,8 @@ angular.module(MODULE_NAME, [])
     }, function () {
       $scope.categories = 'Oops,something went wrong!'
     })
+    $scope.selectCategory = function(el) {
+     console.log(el.item);
+    }
   });
 export default MODULE_NAME;

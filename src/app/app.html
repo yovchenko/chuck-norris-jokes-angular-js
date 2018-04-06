@@ -4,8 +4,13 @@
       {{joke}}
     </div>
     <div ng-repeat="item in categories">
-      <div>{{item}}</div>
+      <button ng-click="selectCategory(this)">{{item}}</button>
     </div>
+    <button ng-click="reset()">RESET</button>
+    <form>
+    <input type="text" ng-model="jokesNumber">
+    <br>
+    </form>
   </div>
 </main>
 <footer>
