@@ -3,14 +3,10 @@
     <div class="row">
       {{joke}}
     </div>
-    <div ng-repeat="item in categories">
-      <button ng-click="selectCategory(this)">{{item}}</button>
+    <div class="btn-group-vertical" role="group">
+      <button type="button" class="btn btn-secondary" ng-click="selectCategory(this)">Select all</button>
+      <button type="button" class="btn btn-secondary" ng-repeat="item in categories">{{item}}</button>
     </div>
-    <button ng-click="reset()">RESET</button>
-    <form>
-    <input type="text" ng-model="jokesNumber">
-    <br>
-    </form>
   </div>
 </main>
 <footer>
