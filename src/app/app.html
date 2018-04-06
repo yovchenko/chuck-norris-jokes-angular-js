@@ -3,10 +3,19 @@
     <div class="row">
       {{joke}}
     </div>
+    <div class="row">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text" id="btnGroupAddon">Num</div>
+      </div>
+      <input type="text" class="form-control" placeholder="Input group example" aria-label="Input group example" aria-describedby="btnGroupAddon">
+    </div>
+    <button class="btn btn-danger" type="reset">Reset</button>
     <div class="btn-group-vertical" role="group">
       <button type="button" class="btn btn-secondary" ng-click="selectCategory(this)">Select all</button>
       <button type="button" class="btn btn-secondary" ng-repeat="item in categories">{{item}}</button>
     </div>
+  </div>
   </div>
 </main>
 <footer>
