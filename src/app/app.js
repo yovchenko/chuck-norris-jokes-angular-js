@@ -23,7 +23,7 @@ angular.module(MODULE_NAME, [])
 		};
 	})
 	.controller('AppCtrl',['$scope','$http','getData',function ($scope, $http, getData) {
-		getData.req($http, 'http://api.icndb.com/jokes/random/1?escape=javascript').then(function (data) {
+		getData.req($http, 'https://api.icndb.com/jokes/random/1?escape=javascript').then(function (data) {
 			$scope.jokes = data.value;
 		}, function () {
 			$scope.jokes = 'Oops,something went wrong!';
@@ -39,14 +39,14 @@ angular.module(MODULE_NAME, [])
 			if (input > 0 && input <= 10) {
 				$scope.jokes = '';
 				if(type === undefined) {
-					getData.req($http, 'http://api.icndb.com/jokes/random/' + input + '?&escape=javascript').then(function (data) {
+					getData.req($http, 'https://api.icndb.com/jokes/random/' + input + '?&escape=javascript').then(function (data) {
 						$scope.jokes = data.value;
 					}, function () {
 						$scope.jokes = 'Oops,something went wrong!';
 					});
 				}
 				else {
-					getData.req($http, 'http://api.icndb.com/jokes/random/' + input + '?limitTo=[' + type + ']&escape=javascript').then(function (data) {
+					getData.req($http, 'https://api.icndb.com/jokes/random/' + input + '?limitTo=[' + type + ']&escape=javascript').then(function (data) {
 						$scope.jokes = data.value;
 					}, function () {
 						$scope.jokes = 'Oops,something went wrong!';
