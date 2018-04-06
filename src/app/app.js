@@ -24,30 +24,29 @@ angular.module(MODULE_NAME, [])
 	})
 	.controller('AppCtrl', function ($scope, $http, getData) {
 		getData.req($http, 'http://api.icndb.com/jokes/random/1?escape=javascript').then(function (data) {
-			$scope.joke = data.value[0].joke;
+			$scope.jokes = data.value;
 		}, function () {
-			$scope.joke = 'Oops,something went wrong!';
+			$scope.jokes = 'Oops,something went wrong!';
 		});
 		getData.req($http, 'https://api.icndb.com/categories').then(function (data) {
 			$scope.categories = data.value;
 		}, function () {
 			$scope.categories = 'Oops,something went wrong!';
 		});
-		$scope.selectCategory = function (el) {
-			// buttons	console.log(el.item);
+		$scope.selectCategory = function (el, input) {
+      console.log(el)
+			$scope.jokes = '';
+			getData.req($http, 'http://api.icndb.com/jokes/random/' + input + '?escape=javascript').then(function (data) {
+				$scope.jokes = data.value;
+			}, function () {
+				$scope.jokes = 'Oops,something went wrong!';
+			});
 		};
 		$scope.change = function () {
 			let input = Number($scope.jokesNumber);
 			if (input > 0 && input <= 10) {
-				$scope.joke = '';
-				getData.req($http, 'http://api.icndb.com/jokes/random/' + input + '?escape=javascript').then(function (data) {
-					data.value.forEach(element => {
-						$scope.joke += element.joke;
-					});
-				}, function () {
-					$scope.joke = 'Oops,something went wrong!';
-				});
-			} else $scope.joke = 'Sorry,but Chuck knows numbers 1 to 10 only';
+				$scope.selectCategory('', input);
+			} else $scope.jokes = 'Sorry,but Chuck knows numbers 1 to 10 only!';
 		};
 	});
 export default MODULE_NAME;

@@ -1,7 +1,7 @@
 <main>
   <div class="container">
     <div class="row">
-      {{joke}}
+      <h1 ng-repeat="joke in jokes track by $index">{{joke.joke}}</h1>
     </div>
     <div class="row">
     <div class="input-group">
@@ -11,9 +11,13 @@
       <input type="text" ng-model="jokesNumber" ng-change="change()" class="form-control" placeholder="How many jokes you want to read?" aria-label="How many jokes you want to read?" aria-describedby="btnGroupAddon">
     </div>
     <button class="btn btn-danger" type="reset">Reset</button>
-    <div class="btn-group-vertical" role="group">
-      <button type="button" class="btn btn-secondary" ng-click="selectCategory(this)">Select all</button>
-      <button type="button" class="btn btn-secondary" ng-repeat="item in categories">{{item}}</button>
+    <div class="btn-group btn-group-toggle btn-group-vertical" data-toggle="buttons">
+      <label class="btn btn-secondary active" ng-click="selectCategory(this)">
+        <input type="radio" name="options" autocomplete="off" checked> Select all
+      </label>
+      <label class="btn btn-secondary" ng-repeat="item in categories" ng-click="selectCategory(this)">
+        <input type="radio" name="options" autocomplete="off"> {{item}}
+      </label>
     </div>
   </div>
   </div>
