@@ -22,7 +22,7 @@ angular.module(MODULE_NAME, [])
 				});
 		};
 	})
-	.controller('AppCtrl', function ($scope, $http, getData) {
+	.controller('AppCtrl',['$scope','$http','getData',function ($scope, $http, getData) {
 		getData.req($http, 'http://api.icndb.com/jokes/random/1?escape=javascript').then(function (data) {
 			$scope.jokes = data.value;
 		}, function () {
@@ -60,5 +60,5 @@ angular.module(MODULE_NAME, [])
 		$scope.reset = function () {
 			$scope.selectCategory();
 		};
-	});
+	}]);
 export default MODULE_NAME;
