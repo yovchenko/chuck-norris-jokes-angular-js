@@ -34,7 +34,7 @@ angular.module(MODULE_NAME, [])
 			$scope.categories = 'Oops,something went wrong!';
 		});
 		$scope.selectCategory = function (el) {
-			let input = Number($scope.jokesNumber),
+			let input = ($scope.jokesNumber === undefined)? 1 : Number($scope.jokesNumber),
 				type = (el === undefined)? undefined : el.item;
 			if (input > 0 && input <= 10) {
 				$scope.jokes = '';
