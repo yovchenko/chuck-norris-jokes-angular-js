@@ -8,7 +8,7 @@
         <input type="text" ng-model="jokesNumber" ng-change="change()" class="form-control" placeholder="How many jokes you want to read?"
           aria-label="How many jokes you want to read?" aria-describedby="btnGroupAddon">
       </div>
-      <button class="btn btn-danger" type="reset">Reset</button>
+      <button class="btn btn-danger" ng-click="reset()" type="reset">Reset</button>
       <div class="btn-group btn-group-toggle btn-group-vertical" data-toggle="buttons">
         <label class="btn btn-secondary active" ng-click="selectCategory(this)">
           <input type="radio" name="options" autocomplete="off" checked> Select all
@@ -21,9 +21,9 @@
   </div>
 </main>
 <footer>
-<div class="container">
-  <div class="row">
-    <h1 ng-repeat="joke in jokes track by $index">{{joke.joke}}</h1>
+  <div class="container">
+    <div class="row">
+      <h1 ng-repeat="joke in jokes track by $index">{{joke.joke}}</h1>
+    </div>
   </div>
-</div>
 </footer>

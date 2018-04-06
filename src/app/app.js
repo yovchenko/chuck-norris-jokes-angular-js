@@ -34,17 +34,30 @@ angular.module(MODULE_NAME, [])
 			$scope.categories = 'Oops,something went wrong!';
 		});
 		$scope.selectCategory = function (el) {
-			let input = Number($scope.jokesNumber);
+			let input = Number($scope.jokesNumber),
+				type = (el === undefined)? undefined : el.item;
 			if (input > 0 && input <= 10) {
 				$scope.jokes = '';
-				getData.req($http, 'http://api.icndb.com/jokes/random/' + input + '?escape=javascript').then(function (data) {
-					$scope.jokes = data.value;
-				}, function () {
-					$scope.jokes = 'Oops,something went wrong!';
-				});
+				if(type === undefined) {
+					getData.req($http, 'http://api.icndb.com/jokes/random/' + input + '?&escape=javascript').then(function (data) {
+						$scope.jokes = data.value;
+					}, function () {
+						$scope.jokes = 'Oops,something went wrong!';
+					});
+				}
+				else {
+					getData.req($http, 'http://api.icndb.com/jokes/random/' + input + '?limitTo=[' + type + ']&escape=javascript').then(function (data) {
+						$scope.jokes = data.value;
+					}, function () {
+						$scope.jokes = 'Oops,something went wrong!';
+					});
+				}
 			} else $scope.numberError = 'Sorry,but Chuck knows numbers 1 to 10 only!';
 		};
 		$scope.change = function () {
+			$scope.selectCategory();
+		};
+		$scope.reset = function () {
 			$scope.selectCategory();
 		};
 	});
