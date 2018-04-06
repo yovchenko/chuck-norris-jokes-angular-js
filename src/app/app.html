@@ -6,9 +6,9 @@
     <div class="row">
     <div class="input-group">
       <div class="input-group-prepend">
-        <div class="input-group-text" id="btnGroupAddon">Num</div>
+        <div class="input-group-text" id="btnGroupAddon">1 - 10</div>
       </div>
-      <input type="text" class="form-control" placeholder="Input group example" aria-label="Input group example" aria-describedby="btnGroupAddon">
+      <input type="text" ng-model="jokesNumber" ng-change="change()" class="form-control" placeholder="How many jokes you want to read?" aria-label="How many jokes you want to read?" aria-describedby="btnGroupAddon">
     </div>
     <button class="btn btn-danger" type="reset">Reset</button>
     <div class="btn-group-vertical" role="group">

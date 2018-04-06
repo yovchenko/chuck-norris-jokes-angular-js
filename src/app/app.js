@@ -22,7 +22,7 @@ angular.module(MODULE_NAME, [])
 				});
 		};
 	})
-	.controller('AppCtrl', function ($scope, $q, $http, getData) {
+	.controller('AppCtrl', function ($scope, $http, getData) {
 		getData.req($http, 'http://api.icndb.com/jokes/random?escape=javascript').then(function (data) {
 			$scope.joke = data.value.joke;
 		}, function () {
@@ -34,7 +34,10 @@ angular.module(MODULE_NAME, [])
 			$scope.categories = 'Oops,something went wrong!';
 		});
 		$scope.selectCategory = function(el) {
-			console.log(el.item);
+		// buttons	console.log(el.item);
+		};
+		$scope.change = function() {
+			// input    console.log($scope.jokesNumber)
 		};
 	});
 export default MODULE_NAME;
