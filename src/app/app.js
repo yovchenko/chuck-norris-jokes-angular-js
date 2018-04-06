@@ -33,20 +33,19 @@ angular.module(MODULE_NAME, [])
 		}, function () {
 			$scope.categories = 'Oops,something went wrong!';
 		});
-		$scope.selectCategory = function (el, input) {
-      console.log(el)
-			$scope.jokes = '';
-			getData.req($http, 'http://api.icndb.com/jokes/random/' + input + '?escape=javascript').then(function (data) {
-				$scope.jokes = data.value;
-			}, function () {
-				$scope.jokes = 'Oops,something went wrong!';
-			});
-		};
-		$scope.change = function () {
+		$scope.selectCategory = function (el) {
 			let input = Number($scope.jokesNumber);
 			if (input > 0 && input <= 10) {
-				$scope.selectCategory('', input);
-			} else $scope.jokes = 'Sorry,but Chuck knows numbers 1 to 10 only!';
+				$scope.jokes = '';
+				getData.req($http, 'http://api.icndb.com/jokes/random/' + input + '?escape=javascript').then(function (data) {
+					$scope.jokes = data.value;
+				}, function () {
+					$scope.jokes = 'Oops,something went wrong!';
+				});
+			} else $scope.numberError = 'Sorry,but Chuck knows numbers 1 to 10 only!';
+		};
+		$scope.change = function () {
+			$scope.selectCategory();
 		};
 	});
 export default MODULE_NAME;
