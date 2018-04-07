@@ -11,21 +11,26 @@
       </div>
     </div>
     <div class="row">
-      <button class="btn btn-danger" ng-click="reset()" type="reset">Reset</button>
-      <div class="btn-group btn-group-toggle btn-group-vertical" data-toggle="buttons">
-        <label class="btn btn-secondary active" ng-click="selectCategory(this)">
-          <input type="radio" name="options" autocomplete="off" checked> Select all
-        </label>
-        <label class="btn btn-secondary" ng-repeat="item in categories" ng-click="selectCategory(this)">
-          <input type="radio" name="options" autocomplete="off"> {{item}}
-        </label>
-      </div>
+      <img src="./img/ChuckMuscle.svg" class="col-3 rounded-circle" alt="Chuck Norris photo">
+      <img src="./img/ChuckNorrisPhoto.jpg" class="col-6 rounded-circle" alt="Chuck Norris photo">
+      <img src="./img/ChuckMuscle.svg" class="col-3 rounded-circle" alt="Chuck Norris photo">
+  </div>
+  <div class="row">
+    <button class="btn btn-danger" ng-click="reset()" type="reset">Reset</button>
+    <div class="btn-group btn-group-toggle btn-group-vertical" data-toggle="buttons">
+      <label class="btn btn-secondary active" ng-click="selectCategory(this)">
+        <input type="radio" name="options" autocomplete="off" checked> Select all
+      </label>
+      <label class="btn btn-secondary" ng-repeat="item in categories" ng-click="selectCategory(this)">
+        <input type="radio" name="options" autocomplete="off"> {{item}}
+      </label>
     </div>
-    <div class="row">
-      <blockquote class="font-effect-outline" ng-repeat="joke in jokes track by $index">
-        <h1>{{joke.joke}}</h1>
-      </blockquote>
-    </div>
+  </div>
+  <div class="row">
+    <blockquote class="font-effect-outline" ng-repeat="joke in jokes track by $index">
+      <h1>{{joke.joke}}</h1>
+    </blockquote>
+  </div>
   </div>
 </main>
 <footer>

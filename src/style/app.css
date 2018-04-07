@@ -9,10 +9,32 @@ html body {
   background: rgb(128, 219, 9);
 }
 
+.row:nth-child(2) {
+  align-items: center;
+}
+
 label[for='input-number'] {
   padding: 15px 15px 10px 15px;
   margin-bottom: -15px;
   font-size: 1.25em;
+}
+
+.container .row .rounded-circle {
+  max-width: 30%;
+  height: 30%;
+  margin: 0 auto;
+}
+
+.container .row .rounded-circle:nth-child(2) {
+  max-width: 40%;
+  height: 40%;
+}
+
+.container .row img:last-child {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .container .row .input-group {
@@ -20,8 +42,12 @@ label[for='input-number'] {
   color: #000;
 }
 
+.container .row .input-group .input-group-text {
+  font-family: 'Cinzel', serif;
+}
+
 .container h1 {
-  font-size: 1.333em;   /* Perfect fourth */
+  font-size: 1.333em;          /* Perfect fourth */
   line-height: 1.2;
   padding: 15px;
 }
@@ -42,31 +68,26 @@ label[for='input-number'] {
   border-bottom-left-radius: 0.25rem;
 }
 
-
 @media (max-width: 1199.98px) {
   html body {
     font-size: 0.95rem;
   }
- 
 }
 
 @media (max-width: 991.98px) {
   html body {
     font-size: 0.9rem;
   }
-
 }
 
 @media (max-width: 767.98px) {
   html body {
     font-size: 0.85rem;
   }
-
 }
 
 @media (max-width: 575.98px) {
   html body {
     font-size: 0.7rem;
   }
-
 }
