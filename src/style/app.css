@@ -1,12 +1,17 @@
 html body {
   font-family: 'Cinzel', serif;
+  height: 100%;
   font-size: 1rem;
   line-height: 1.45;
   color: #333;
+  background-image: url(/img/fightingMasters.svg);
+  background-size: 150px 150px;
 }
 
 .container {
-  background: rgb(128, 219, 9);
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(0,0,0,0.6);
 }
 
 .row:nth-child(2) {
@@ -20,6 +25,8 @@ label[for='input-number'] {
 }
 
 .container .row .rounded-circle {
+  padding: 0px;
+  border: 5px solid #333;
   max-width: 20%;
   height: 20%;
   margin: 0 auto;
