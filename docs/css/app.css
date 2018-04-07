@@ -1,15 +1,52 @@
-body {
-  font-size: 100%;
+html body {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  line-height: 1.45;
+  color: #333;
 }
 
 .container {
   background: rgb(128, 219, 9);
 }
 
-.row {}
+.row:nth-child(2) {
+  -ms-flex-align: center;
+      align-items: center;
+}
+
+label[for='input-number'] {
+  padding: 15px 15px 10px 15px;
+  margin-bottom: -15px;
+  font-size: 1.25em;
+}
+
+.container .row .rounded-circle {
+  max-width: 30%;
+  height: 30%;
+  margin: 0 auto;
+}
+
+.container .row .rounded-circle:nth-child(2) {
+  max-width: 40%;
+  height: 40%;
+}
+
+.container .row img:last-child {
+  transform: rotateY(180deg);
+}
+
+.container .row .input-group {
+  padding: 15px;
+  color: #000;
+}
+
+.container .row .input-group .input-group-text {
+  font-family: 'Cinzel', serif;
+}
 
 .container h1 {
-  font-size: 1.3em;
+  font-size: 1.333em;          /* Perfect fourth */
+  line-height: 1.2;
   padding: 15px;
 }
 
@@ -29,44 +66,28 @@ body {
   border-bottom-left-radius: 0.25rem;
 }
 
-.container .form-control {
-  font-size: 1.25rem;
-}
-
 @media (max-width: 1199.98px) {
   html body {
     font-size: 0.95rem;
   }
-  .container .form-control {
-    font-size: 1.2rem;
-}
 }
 
 @media (max-width: 991.98px) {
   html body {
     font-size: 0.9rem;
   }
-  .container .form-control {
-    font-size: 1.15rem;
-}
 }
 
 @media (max-width: 767.98px) {
   html body {
     font-size: 0.85rem;
   }
-  .container .form-control {
-    font-size: 1.1rem;
-}
 }
 
 @media (max-width: 575.98px) {
   html body {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
-  .container .form-control {
-    font-size: 1.05rem;
-}
 }/*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
  * Copyright 2011-2018 The Bootstrap Authors
