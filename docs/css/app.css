@@ -4,7 +4,7 @@ html body {
   font-size: 1rem;
   line-height: 1.45;
   color: #333;
-  background-image: url(/img/fightingMasters.svg);
+  background-image: url(../img/fightingMasters.svg);
   background-size: 150px 150px;
 }
 
@@ -29,7 +29,7 @@ html body {
   -webkit-filter: blur(10px);
   -moz-filter: blur(10px);
   -o-filter: blur(10px);
-  -ms-filter: blur(10px);
+  -ms-filter: blur(10px)
  }
 
 .row:nth-child(2) {
@@ -42,6 +42,10 @@ label[for='input-number'] {
   padding: 15px 15px 10px 15px;
   margin-bottom: -15px;
   font-size: 1.25em;
+}
+
+button,label,blockquote {
+  z-index: 1;
 }
 
 .container .row .rounded-circle {
