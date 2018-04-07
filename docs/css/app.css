@@ -21,14 +21,14 @@ label[for='input-number'] {
 }
 
 .container .row .rounded-circle {
-  max-width: 30%;
-  height: 30%;
+  max-width: 20%;
+  height: 20%;
   margin: 0 auto;
 }
 
 .container .row .rounded-circle:nth-child(2) {
-  max-width: 40%;
-  height: 40%;
+  max-width: 30%;
+  height: 30%;
 }
 
 .container .row img:last-child {
@@ -81,6 +81,15 @@ label[for='input-number'] {
 @media (max-width: 767.98px) {
   html body {
     font-size: 0.85rem;
+  }
+  .container .row .rounded-circle {
+    max-width: 30%;
+    height: 30%;
+  }
+  
+  .container .row .rounded-circle:nth-child(2) {
+    max-width: 40%;
+    height: 40%;
   }
 }
 
