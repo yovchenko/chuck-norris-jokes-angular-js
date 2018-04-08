@@ -3,6 +3,7 @@ html body {
   height: 100%;
   font-size: 1rem;
   line-height: 1.45;
+
   color: #333;
   background-image: url("../public/img/fightingMasters.svg");
   background-size: 150px 150px;
@@ -34,6 +35,7 @@ html body {
 
 .row:nth-child(2) {
   align-items: center;
+  margin: 0 auto;
   padding: 15px;
 }
 
