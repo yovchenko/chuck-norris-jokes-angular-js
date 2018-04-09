@@ -12,7 +12,7 @@ html body {
   width: 100%;
   min-height: 100vh;
   position: relative;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.7);
   overflow: hidden;
 }
 
@@ -20,11 +20,11 @@ html body {
   content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='svgMask'><feGaussianBlur stdDeviation='10'></feGaussianBlur></filter></svg>");
   background: inherit;
   position: absolute;
-  left: -25px;
+  left: 0px;
   right: 0;
-  top: -25px;
+  top: 0px;
   bottom: 0;
-  box-shadow: inset 0 0 0 3000px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 0 0 1140px rgba(255, 255, 255, 0.3);
   filter: blur(10px);
   -webkit-filter: blur(10px);
   -moz-filter: blur(10px);
