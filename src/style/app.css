@@ -3,7 +3,6 @@ html body {
   height: 100%;
   font-size: 1rem;
   line-height: 1.45;
-
   color: #333;
   background-image: url("../public/img/fightingMasters.svg");
   background-size: 150px 150px;
@@ -76,6 +75,10 @@ button,label,blockquote {
 
 .container .row .input-group .input-group-text {
   font-family: 'Cinzel', serif;
+}
+
+.container .row .alert-warning {
+  margin: 15px;
 }
 
 .container h1 {

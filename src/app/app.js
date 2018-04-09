@@ -37,6 +37,7 @@ angular.module(MODULE_NAME, [])
 		$scope.selectCategory = function (el) {
 			let input = ($scope.jokesNumber === undefined || $scope.jokesNumber === '')? 1 : Number($scope.jokesNumber),
 				type = (el === undefined)? undefined : el.item;
+				angular.element( document.getElementsByClassName('alert-warning')[0]).removeClass('show');
 			if (input > 0 && input <= 10) {
 				$scope.jokes = '';
 				if(type === undefined) {
@@ -53,7 +54,7 @@ angular.module(MODULE_NAME, [])
 						$scope.jokes = 'Oops,something went wrong!';
 					});
 				}
-			} else $scope.numberError = 'Sorry,but Chuck knows numbers 1 to 10 only!';
+			} else angular.element( document.getElementsByClassName('alert-warning')[0]).addClass('show');
 		};
 		$scope.change = function () {
 			$scope.selectCategory();
