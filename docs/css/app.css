@@ -1,5 +1,5 @@
 html body {
-  font-family: 'Cinzel','Georgia', serif;
+  font-family: 'Cinzel', 'Georgia', serif;
   height: 100%;
   font-size: 1rem;
   line-height: 1.45;
@@ -83,7 +83,7 @@ blockquote {
 }
 
 .container .row .input-group .input-group-text {
-  font-family: 'Cinzel','Georgia', serif;
+  font-family: 'Cinzel', 'Georgia', serif;
   z-index: 1;
   border: none;
   background-color: #007bff;
@@ -159,7 +159,7 @@ blockquote {
   html body {
     font-size: 0.85rem;
   }
-  .container h1 br:last-child {
+  .container h1 br {
     display: inline;
   }
   .container .row .rounded-circle {
@@ -175,9 +175,6 @@ blockquote {
 @media (max-width: 575.98px) {
   html body {
     font-size: 0.7rem;
-  }
-  .container h1 br {
-    display: inline;
   }
 }/*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
