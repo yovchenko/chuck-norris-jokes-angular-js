@@ -85,6 +85,7 @@ It will start a local server using `webpack-dev-server` which will watch, build 
 * live mode (TDD style): `npm run test-watch`
 
 #### Project files / folder structure 
+
     .                           # Compiled files (`docs`)
     ├── docs                    # Source files (`src`)
     ├── src   
