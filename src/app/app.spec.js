@@ -19,5 +19,4 @@ describe('app', () => {
 			expect($scope.alertWarning).toEqual(false);
 		});
   });
-  
 });

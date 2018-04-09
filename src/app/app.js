@@ -40,7 +40,6 @@ angular.module(MODULE_NAME, ['ngAnimate'])
 				type = (el === undefined)? undefined : el.item;
 			$scope.alertWarning = false;
 			if (input > 0 && input <= 10) {
-				$scope.jokes = '';
 				if(type === undefined) {
 					getData.req($http, 'https://api.icndb.com/jokes/random/' + input + '?&escape=javascript').then(function (data) {
 						$scope.jokes = data.value;
