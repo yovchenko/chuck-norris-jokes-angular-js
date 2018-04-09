@@ -2,6 +2,7 @@ import angular from 'angular';
 import '../style/app.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../../node_modules/bootstrap/dist/js/bootstrap.min.js';
+import '../../node_modules/angular-animate/angular-animate.min.js';
 
 let app = () => {
 	return {
@@ -13,7 +14,7 @@ let app = () => {
 
 const MODULE_NAME = 'app';
 
-angular.module(MODULE_NAME, [])
+angular.module(MODULE_NAME, ['ngAnimate'])
 	.directive('app', app)
 	.service('getData', function () {
 		this.req = function ($http, url) {
@@ -37,7 +38,7 @@ angular.module(MODULE_NAME, [])
 		$scope.selectCategory = function (el) {
 			let input = ($scope.jokesNumber === undefined || $scope.jokesNumber === '')? 1 : Number($scope.jokesNumber),
 				type = (el === undefined)? undefined : el.item;
-				angular.element( document.getElementsByClassName('alert-warning')[0]).removeClass('show');
+				$scope.alertWarning = false;
 			if (input > 0 && input <= 10) {
 				$scope.jokes = '';
 				if(type === undefined) {
@@ -54,7 +55,7 @@ angular.module(MODULE_NAME, [])
 						$scope.jokes = 'Oops,something went wrong!';
 					});
 				}
-			} else angular.element( document.getElementsByClassName('alert-warning')[0]).addClass('show');
+			} else $scope.alertWarning = true;
 		};
 		$scope.change = function () {
 			$scope.selectCategory();

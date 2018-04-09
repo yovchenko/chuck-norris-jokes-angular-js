@@ -3,7 +3,7 @@ html body {
   height: 100%;
   font-size: 1rem;
   line-height: 1.45;
-  color: #333;
+  color: #222;
   background-image: url("../public/img/fightingMasters.svg");
   background-size: 150px 150px;
 }
@@ -50,7 +50,7 @@ button,label,blockquote {
 
 .container .row .rounded-circle {
   padding: 0px;
-  border: 5px solid #333;
+  border: 5px solid #222;
   max-width: 20%;
   height: 20%;
   margin: 0 auto;
@@ -70,15 +70,32 @@ button,label,blockquote {
 
 .container .row .input-group {
   padding: 15px;
-  color: #000;
+  color: #222;
 }
 
 .container .row .input-group .input-group-text {
   font-family: 'Cinzel', serif;
 }
 
-.container .row .alert-warning {
+.container .row .alert-warning.animate-show {
+  font-size: 1.333em; 
+  line-height: 1.2;     
   margin: 15px;
+  opacity: 1;
+}
+
+.animate-show.ng-hide-add.ng-hide-add-active,
+.animate-show.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+  -moz-transition:all linear 0.5s;
+  -ms-transition:all linear 0.5s;
+  -o-transition:all linear 0.5s;
+}
+
+.container .row .alert-warning.animate-show.ng-hide  {
+  line-height: 0;
+  opacity: 0;
 }
 
 .container h1 {

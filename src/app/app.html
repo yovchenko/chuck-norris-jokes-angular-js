@@ -9,7 +9,7 @@
         <input type="text" ng-model="jokesNumber" id="input-number" ng-change="change()" class="form-control" placeholder="Enter a number"
           aria-label="Enter a number" aria-describedby="btnGroupAddon">
       </div>
-      <div class="alert alert-warning fade" role="alert">
+      <div class="animate-show alert alert-warning" ng-show="alertWarning" ng-model="alertWarning" role="alert">
         <strong>Warning!</strong> Sorry,but Chuck knows numbers 1 to 10 only!.
       </div>
     </div>
