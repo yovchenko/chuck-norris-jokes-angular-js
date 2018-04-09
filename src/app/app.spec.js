@@ -3,20 +3,26 @@ import app from './app';
 describe('app', () => {
 
 	describe('AppCtrl', () => {
-		var $controller;
+		var $controller, $rootScope, $http, createController, getData;
 
 		beforeEach(() => {
 			angular.mock.module(app);
-
-			angular.mock.inject((_$controller_) => {
-				$controller = _$controller_;
+			angular.mock.inject(($injector) => {
+				$controller = $injector.get('$controller');
+				$rootScope = $injector.get('$rootScope');
+				createController = function () {
+					return $controller('AppCtrl', {
+						'$scope': $rootScope,
+					});
+				};
 			});
 		});
 
-		it('should', () => {
-			var $scope = {};
-			var controller = $controller('AppCtrl', { $scope: $scope });
-			expect($scope.alertWarning).toEqual(false);
+		it('should return expexctations', () => {
+			var controller = createController();
+			$rootScope.jokesNumber = 11;
+			$rootScope.selectCategory();
+			expect($rootScope.alertWarning).toEqual(true);
 		});
-  });
+	});
 });
