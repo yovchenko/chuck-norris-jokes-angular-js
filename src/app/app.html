@@ -19,15 +19,15 @@
       <img src="./img/muscle.svg" class="col-3 rounded-circle" alt="photo of muscle">
   </div>
   <div class="row">
-    <button class="btn btn-danger" ng-click="reset()" type="reset">Reset</button>
-    <div class="btn-group btn-group-toggle btn-group-vertical" data-toggle="buttons">
-      <label class="btn btn-secondary active" ng-click="selectCategory(this)">
+    <div class="col-8 btn-group btn-group-toggle btn-group-vertical" data-toggle="buttons">
+      <label class="btn btn-primary active" ng-click="selectCategory(this)">
         <input type="radio" name="options" autocomplete="off" checked> Select all
       </label>
-      <label class="btn btn-secondary" ng-repeat="item in categories" ng-click="selectCategory(this)">
+      <label class="btn btn-primary" ng-repeat="item in categories" ng-click="selectCategory(this)">
         <input type="radio" name="options" autocomplete="off"> {{item}}
       </label>
     </div>
+    <button class="col-4 btn btn-danger" ng-click="refresh()" type="button">Refresh</button>
   </div>
   <div class="row">
     <blockquote class="font-effect-outline" ng-repeat="joke in jokes track by $index">

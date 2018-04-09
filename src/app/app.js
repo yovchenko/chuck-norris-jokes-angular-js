@@ -60,7 +60,7 @@ angular.module(MODULE_NAME, ['ngAnimate'])
 		$scope.change = function () {
 			$scope.selectCategory();
 		};
-		$scope.reset = function () {
+		$scope.refresh = function () {
 			$scope.selectCategory();
 		};
 		$scope.alertWarning = false;

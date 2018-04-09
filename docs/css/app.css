@@ -12,25 +12,25 @@ html body {
   width: 100%;
   min-height: 100vh;
   position: relative;
-  background: rgba(0,0,0,0.75);
-  overflow: hidden; 
+  background: rgba(0, 0, 0, 0.75);
+  overflow: hidden;
 }
 
-.container:before{
+.container:before {
   content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='svgMask'><feGaussianBlur stdDeviation='10'></feGaussianBlur></filter></svg>");
-  background: inherit; 
+  background: inherit;
   position: absolute;
-  left: -25px; 
+  left: -25px;
   right: 0;
-  top: -25px;   
+  top: -25px;
   bottom: 0;
-  box-shadow: inset 0 0 0 3000px rgba(255,255,255,0.2);
+  box-shadow: inset 0 0 0 3000px rgba(255, 255, 255, 0.2);
   filter: blur(10px);
   -webkit-filter: blur(10px);
   -moz-filter: blur(10px);
   -o-filter: blur(10px);
   -ms-filter: blur(10px)
- }
+}
 
 .row:nth-child(2) {
   -ms-flex-align: center;
@@ -45,13 +45,16 @@ label[for='input-number'] {
   font-size: 1.25em;
 }
 
-button,label,blockquote {
+button,
+label,
+blockquote {
   z-index: 1;
 }
 
 .container .row .rounded-circle {
   padding: 0px;
-  border: 5px solid #222;
+  border: 5px dashed #007bff;
+  background: #fff;
   max-width: 20%;
   height: 20%;
   margin: 0 auto;
@@ -74,6 +77,9 @@ button,label,blockquote {
 .container .row .input-group .input-group-text {
   font-family: 'Cinzel', serif;
   z-index: 1;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
 }
 
 .container .row .alert-warning.animate-show {
@@ -93,17 +99,26 @@ button,label,blockquote {
 }
 
 .container h1 {
-  font-size: 1.333em;          /* Perfect fourth */
+  font-size: 1.333em;
+  /* Perfect fourth */
   line-height: 1.2;
   padding: 15px;
 }
 
 .container .row .btn-group-vertical {
-  margin: 15px;
+
 }
 
 .container .row .btn-danger {
-  margin: 15px;
+  margin-left: -15px;
+}
+
+.container .row .btn-primary {
+
+}
+
+.container .row .btn-primary.active {
+  z-index: 2;
 }
 
 .container .row .btn-group-vertical .btn:first-child {
@@ -134,7 +149,6 @@ button,label,blockquote {
     max-width: 30%;
     height: 30%;
   }
-  
   .container .row .rounded-circle:nth-child(2) {
     max-width: 40%;
     height: 40%;
