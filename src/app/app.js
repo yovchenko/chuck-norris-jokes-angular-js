@@ -25,15 +25,15 @@ angular.module(MODULE_NAME, ['ngAnimate'])
 		};
 	})
 	.controller('AppCtrl',['$scope','$http','getData',function ($scope, $http, getData) {
+		$scope.alertDanger = false;
+		$scope.alertWarning = false;
 		getData.req($http, 'https://api.icndb.com/jokes/random/1?escape=javascript').then(function (data) {
 			$scope.jokes = data.value;
 		}, function () {
-			$scope.jokes = 'Oops,something went wrong!';
+			$scope.alertDanger = true;
 		});
 		getData.req($http, 'https://api.icndb.com/categories').then(function (data) {
 			$scope.categories = data.value;
-		}, function () {
-			$scope.categories = 'Oops,something went wrong!';
 		});
 		$scope.selectCategory = function (el) {
 			let input = ($scope.jokesNumber === undefined || $scope.jokesNumber === '')? 1 : Number($scope.jokesNumber),
@@ -43,15 +43,17 @@ angular.module(MODULE_NAME, ['ngAnimate'])
 				if(type === undefined) {
 					getData.req($http, 'https://api.icndb.com/jokes/random/' + input + '?&escape=javascript').then(function (data) {
 						$scope.jokes = data.value;
+						$scope.alertDanger = false;
 					}, function () {
-						$scope.jokes = 'Oops,something went wrong!';
+						$scope.alertDanger = true;
 					});
 				}
 				else {
 					getData.req($http, 'https://api.icndb.com/jokes/random/' + input + '?limitTo=[' + type + ']&escape=javascript').then(function (data) {
 						$scope.jokes = data.value;
+						$scope.alertDanger = false;
 					}, function () {
-						$scope.jokes = 'Oops,something went wrong!';
+						$scope.alertDanger = true;
 					});
 				}
 			} else $scope.alertWarning = true;
@@ -62,6 +64,5 @@ angular.module(MODULE_NAME, ['ngAnimate'])
 		$scope.refresh = function () {
 			$scope.selectCategory();
 		};
-		$scope.alertWarning = false;
 	}]);
 export default MODULE_NAME;

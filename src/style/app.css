@@ -92,6 +92,11 @@ blockquote {
   color: #fff;
 }
 
+.container .row .alert-danger {
+  font-size: 1.333em;
+  line-height: 1.2;
+  margin: 15px;
+}
 .container .row .alert-warning.animate-show {
   font-size: 1.333em;
   line-height: 1.2;

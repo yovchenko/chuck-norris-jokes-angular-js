@@ -10,7 +10,7 @@
           aria-label="Enter a number" aria-describedby="btnGroupAddon">
       </div>
       <div class="animate-show alert alert-warning" ng-show="alertWarning" ng-model="alertWarning" role="alert">
-        <strong>Warning!</strong> Sorry,but Chuck knows numbers 1 to 10 only!.
+        <strong>Warning!</strong> Sorry,but Chuck knows numbers 1 to 10 only!
       </div>
     </div>
     <div class="row">
@@ -37,6 +37,9 @@
       <blockquote>
         <h4 class="font-effect-outline" ng-repeat="joke in jokes track by $index">{{joke.joke}}</h4>
       </blockquote>
+      <div class="alert alert-danger" ng-show="alertDanger" ng-model="alertDanger" role="alert">
+        <strong>Danger!</strong> Chuck is not in the mood for jokes, please try again later.
+      </div>
     </div>
   </div>
 </main>
