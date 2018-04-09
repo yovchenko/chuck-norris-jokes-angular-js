@@ -18,5 +18,6 @@ describe('app', () => {
 			var controller = $controller('AppCtrl', { $scope: $scope });
 			expect($scope.alertWarning).toEqual(false);
 		});
-	});
+  });
+  
 });
