@@ -73,26 +73,23 @@ button,label,blockquote {
 
 .container .row .input-group .input-group-text {
   font-family: 'Cinzel', serif;
+  z-index: 1;
 }
 
 .container .row .alert-warning.animate-show {
-  font-size: 1.333em; 
-  line-height: 1.2;     
+  font-size: 1.333em;
+  line-height: 1.2;
   margin: 15px;
-  opacity: 1;
+  transform: translateY(0);
 }
 
 .animate-show.ng-hide-add.ng-hide-add-active,
 .animate-show.ng-hide-remove.ng-hide-remove-active {
-  transition:all linear 0.3s;
-  -moz-transition:all linear 0.3s;
-  -ms-transition:all linear 0.3s;
-  -o-transition:all linear 0.3s;
+  transition: all linear 0.3s;
 }
 
-.container .row .alert-warning.animate-show.ng-hide  {
-  line-height: 0;
-  opacity: 0;
+.container .row .alert-warning.animate-show.ng-hide {
+  transform: translateY(-100%);
 }
 
 .container h1 {
