@@ -85,18 +85,33 @@ It will start a local server using `webpack-dev-server` which will watch, build 
 * live mode (TDD style): `npm run test-watch`
 
 #### Project files / folder structure 
-.                               # Compiled files (`docs`)
+    .                           # Compiled files (`docs`)
     ├── docs                    # Source files (`src`)
     ├── src   
     │    ├── app 
-         │     ├── app.html
-         │     ├── app.js
-         │     └── app.spec.js
+    │    │    ├── app.html
+    │    │    ├── app.js
+    │    │    └── app.spec.js
     │    ├── public
-    │  
-    
-      └── style                         
-    └── README.md
+    │    │      ├── img
+    │    │      │    ├── chuckNorrisPhoto.jpg 
+    │    │      │    ├── favicon.ico 
+    │    │      │    ├── fightingMasters.svg
+    │    │      │    └── muscle.svg 
+    │    │      └── index.html
+    │    ├── style     
+    │    │     └── app.css         
+    │    └── tests.webpack.js
+    ├── .babelrc
+    ├── .eslintrc.js
+    ├── .gitignore
+    ├── karma.conf.js
+    ├── LICENSE
+    ├── package-lock.json
+    ├── package.json
+    ├── postcss.config.js
+    ├── README.md
+    └── webpack.config.js
 
 # License
 
