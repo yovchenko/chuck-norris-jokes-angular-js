@@ -33,9 +33,17 @@ html body {
 }
 
 .row:nth-child(2) {
+  padding: 0px 15px;
+}
+
+.row:nth-child(3) {
   -ms-flex-align: center;
       align-items: center;
   margin: 0 auto;
+  padding: 15px 0px;
+}
+
+.row:nth-child(4) {
   padding: 15px 0px;
 }
 
@@ -99,6 +107,16 @@ blockquote {
 }
 
 .container h1 {
+  z-index: 1;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.container h1 br {
+  display: none;
+}
+
+.container h4 {
   font-size: 1.333em;
   /* Perfect fourth */
   line-height: 1.2;
@@ -141,6 +159,9 @@ blockquote {
   html body {
     font-size: 0.85rem;
   }
+  .container h1 br:last-child {
+    display: inline;
+  }
   .container .row .rounded-circle {
     max-width: 30%;
     height: 30%;
@@ -154,6 +175,9 @@ blockquote {
 @media (max-width: 575.98px) {
   html body {
     font-size: 0.7rem;
+  }
+  .container h1 br {
+    display: inline;
   }
 }/*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
