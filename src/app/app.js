@@ -38,7 +38,7 @@ angular.module(MODULE_NAME, ['ngAnimate'])
 		$scope.selectCategory = function (el) {
 			let input = ($scope.jokesNumber === undefined || $scope.jokesNumber === '')? 1 : Number($scope.jokesNumber),
 				type = (el === undefined)? undefined : el.item;
-				$scope.alertWarning = false;
+			$scope.alertWarning = false;
 			if (input > 0 && input <= 10) {
 				$scope.jokes = '';
 				if(type === undefined) {

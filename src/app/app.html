@@ -14,30 +14,29 @@
       </div>
     </div>
     <div class="row">
-      <h1 class="font-effect-outline">Chuck Norris<br> Jokes</h1>
+      <h1 class="font-effect-outline">Chuck Norris
+        <br> Jokes</h1>
     </div>
     <div class="row">
       <img src="./img/muscle.svg" class="col-3 rounded-circle" alt="photo of muscle">
       <img src="./img/chuckNorrisPhoto.jpg" class="col-6 rounded-circle" alt="Chuck Norris photo">
       <img src="./img/muscle.svg" class="col-3 rounded-circle" alt="photo of muscle">
-  </div>
-  <div class="row">
-    <div class="col-8 btn-group btn-group-toggle btn-group-vertical" data-toggle="buttons">
-      <label class="btn btn-primary active" ng-click="selectCategory(this)">
-        <input type="radio" name="options" autocomplete="off" checked> Select all
-      </label>
-      <label class="btn btn-primary" ng-repeat="item in categories" ng-click="selectCategory(this)">
-        <input type="radio" name="options" autocomplete="off"> {{item}}
-      </label>
     </div>
-    <button class="col-4 btn btn-danger" ng-click="refresh()" type="button">Refresh</button>
-  </div>
-  <div class="row">
-    <blockquote class="font-effect-outline" ng-repeat="joke in jokes track by $index">
-      <h4>{{joke.joke}}</h4>
-    </blockquote>
-  </div>
+    <div class="row">
+      <div class="col-8 btn-group btn-group-toggle btn-group-vertical" data-toggle="buttons">
+        <label class="btn btn-primary active" ng-click="selectCategory(this)">
+          <input type="radio" name="options" autocomplete="off" checked> Select all
+        </label>
+        <label class="btn btn-primary" ng-repeat="item in categories" ng-click="selectCategory(this)">
+          <input type="radio" name="options" autocomplete="off"> {{item}}
+        </label>
+      </div>
+      <button class="col-4 btn btn-danger" ng-click="refresh()" type="button">Refresh</button>
+    </div>
+    <div class="row">
+      <blockquote>
+        <h4 class="font-effect-outline" ng-repeat="joke in jokes track by $index">{{joke.joke}}</h4>
+      </blockquote>
+    </div>
   </div>
 </main>
-<footer>
-</footer>

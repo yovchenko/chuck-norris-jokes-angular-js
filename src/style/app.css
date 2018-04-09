@@ -137,13 +137,9 @@ blockquote {
   padding: 15px;
 }
 
-.container .row .btn-group-vertical {}
-
 .container .row .btn-danger {
   margin-left: -15px;
 }
-
-.container .row .btn-primary {}
 
 .container .row .btn-primary.active {
   z-index: 2;
