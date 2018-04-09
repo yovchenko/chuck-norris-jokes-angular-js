@@ -3,7 +3,7 @@ import app from './app';
 describe('app', () => {
 
 	describe('AppCtrl', () => {
-		var $controller, $rootScope, $http, createController, getData;
+		var $controller, $rootScope, createController;
 
 		beforeEach(() => {
 			angular.mock.module(app);
@@ -20,7 +20,12 @@ describe('app', () => {
 
 		it('should return expexctations', () => {
 			var controller = createController();
-			$rootScope.jokesNumber = 11;
+			function randomStr(m) {
+				var s = '', r = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&**()_+~:"|?><';
+				for (var i=0; i < m; i++) { s += r.charAt(Math.floor(Math.random()*r.length)); }
+				return s;
+			}
+			$rootScope.jokesNumber = randomStr(1);
 			$rootScope.selectCategory();
 			expect($rootScope.alertWarning).toEqual(true);
 		});
