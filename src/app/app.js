@@ -63,5 +63,6 @@ angular.module(MODULE_NAME, ['ngAnimate'])
 		$scope.reset = function () {
 			$scope.selectCategory();
 		};
+		$scope.alertWarning = false;
 	}]);
 export default MODULE_NAME;
