@@ -45,7 +45,7 @@ go to [http://localhost:8080](http://localhost:8080) in your browser.
     * [Running the app](#running-the-app)
     * [Developing](#developing)
     * [Testing](#testing)
-* [Project](#project)
+* [Project files](#project-files)
 * [License](#license)
 
 # Getting Started
@@ -85,7 +85,7 @@ It will start a local server using `webpack-dev-server` which will watch, build 
 * single run: `npm test`
 * live mode (TDD style): `npm run test-watch`
 
-## Project
+## Project files / folder structure
 
     .                           # Compiled files (`docs`)
     ├── docs                    # Source files (`src`)
