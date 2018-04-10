@@ -13,8 +13,9 @@ describe('app', () => {
 				$rootScope = $injector.get('$rootScope');
 				$http = $injector.get('$http');
 				$httpBackend = $injector.get('$httpBackend');
-				$httpBackend.expectGET('https://api.icndb.com/jokes/random/1?escape=javascript').respond({});
-				createController = function () {
+				$httpBackend.whenGET('https://api.icndb.com/jokes/random/1?escape=javascript').respond(400, {});
+				$httpBackend.whenGET('https://api.icndb.com/categories').respond(200, {});
+				createController = () => {
 					return $controller('AppCtrl', {
 						'$scope': $rootScope,
 					});
@@ -41,8 +42,14 @@ describe('app', () => {
 				expect($rootScope.alertWarning).toEqual(true);
 			}
 		});
-		it( 'Verify service has been called', function() {
-			service.req($http,'https://api.icndb.com/jokes/random/1?escape=javascript').then(function(data) {
+		it( 'Verify service has been called', () => {
+			let controller = createController();
+			service.req($http,'https://api.icndb.com/jokes/random/1?escape=javascript').then((data) => {
+				expect(data).toEqual({});
+			},() => {
+				expect($rootScope.alertDanger).toEqual(true);
+			});
+			service.req($http,'https://api.icndb.com/categories').then((data) => {
 				expect(data).toEqual({});
 			});
 			$httpBackend.flush();
