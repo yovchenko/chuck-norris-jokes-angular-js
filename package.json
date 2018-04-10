@@ -13,7 +13,7 @@
     "type": "git",
     "url": "https://github.com/preboot/angularjs-webpack.git"
   },
-  "author": "Jesus",
+  "author": "Volodymyr M. Yovchenko",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/preboot/angularjs-webpack/issues"
