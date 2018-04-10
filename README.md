@@ -45,7 +45,7 @@ go to [http://localhost:8080](http://localhost:8080) in your browser.
     * [Running the app](#running-the-app)
     * [Developing](#developing)
     * [Testing](#testing)
-* [Project files / folder structure](#project files)
+* [Project files](#project files)
 * [License](#license)
 
 # Getting Started
@@ -87,8 +87,10 @@ It will start a local server using `webpack-dev-server` which will watch, build 
 
 ## Project files / folder structure 
 
-    .                           # Compiled files (`docs`)
-    ├── docs                    # Source files (`src`)
+* Compiled files (`docs`)
+* Source files (`src`)
+    .                          
+    ├── docs                    
     ├── src   
     │    ├── app 
     │    │    ├── app.html
