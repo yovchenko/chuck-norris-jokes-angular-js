@@ -13,7 +13,7 @@ describe('app', () => {
 				$rootScope = $injector.get('$rootScope');
 				$http = $injector.get('$http');
 				$httpBackend = $injector.get('$httpBackend');
-				$httpBackend.expectGET('https://api.icndb.com/jokes/random/1?escape=javascript').respond('Hi!');
+				$httpBackend.expectGET('https://api.icndb.com/jokes/random/1?escape=javascript').respond({});
 				createController = function () {
 					return $controller('AppCtrl', {
 						'$scope': $rootScope,
@@ -41,9 +41,9 @@ describe('app', () => {
 				expect($rootScope.alertWarning).toEqual(true);
 			}
 		});
-		it( 'Verify tourService.start has been called', function() {
+		it( 'Verify service has been called', function() {
 			service.req($http,'https://api.icndb.com/jokes/random/1?escape=javascript').then(function(data) {
-				expect(data).toEqual('Hi!');
+				expect(data).toEqual({});
 			});
 			$httpBackend.flush();
 		} );
