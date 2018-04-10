@@ -3,7 +3,7 @@ import app from './app';
 describe('app', () => {
 
 	describe('AppCtrl', () => {
-		var $controller, $rootScope, createController;
+		let $controller, $rootScope, createController;
 
 		beforeEach(() => {
 			angular.mock.module(app);
@@ -18,16 +18,24 @@ describe('app', () => {
 			});
 		});
 
-		it('should return expexctations', () => {
-			var controller = createController();
-			function randomStr(m) {
-				var s = '', r = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&**()_+~:"|?><';
-				for (var i=0; i < m; i++) { s += r.charAt(Math.floor(Math.random()*r.length)); }
-				return s;
+		it('Matching a randomly generated String to input', () => {
+			let controller = createController(),
+				x = 100;
+
+			function randomStr(num) {
+				let str = '',
+					abc = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&**()_+~:"|?><';
+				for (let y = 0; y < num; y++) {
+					str += abc.charAt(Math.floor(Math.random() * abc.length));
+				}
+				return str;
 			}
-			$rootScope.jokesNumber = randomStr(1);
-			$rootScope.selectCategory();
-			expect($rootScope.alertWarning).toEqual(true);
+			while (x--) {
+				let randomNum = Math.floor((Math.random() * x) + 1);
+				$rootScope.jokesNumber = randomStr(randomNum);
+				$rootScope.selectCategory();
+				expect($rootScope.alertWarning).toEqual(true);
+			}
 		});
 	});
 });
