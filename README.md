@@ -114,6 +114,10 @@ It will start a local server using `webpack-dev-server` which will watch, build 
     ├── postcss.config.js
     ├── README.md
     └── webpack.config.js
+    
+# Live example
+
+https://yovchenko.github.io/Chuck-Norris-jokes-AngularJS/
 
 # License
 
