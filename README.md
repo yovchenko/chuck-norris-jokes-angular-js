@@ -117,7 +117,7 @@ It will start a local server using `webpack-dev-server` which will watch, build 
     
 # Live example
 
-https://yovchenko.github.io/Chuck-Norris-jokes-AngularJS/
+https://yovchenko.github.io/chuck-norris-jokes-angular-js
 
 # License
 
